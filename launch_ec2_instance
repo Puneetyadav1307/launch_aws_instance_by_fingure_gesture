@@ -1,3 +1,14 @@
+import boto3
+myec2 = boto3.resource("ec2"  )
+
+def launchOS():
+    response = myec2.create_instances( 
+        ImageId="ami-0da59f1af71ea4ad2",  
+        InstanceType="t2.micro",
+        MaxCount=1,
+        MinCount=1
+    )
+
 import  cv2
 cap = cv2.VideoCapture( 0 )
 
